@@ -1,17 +1,20 @@
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.hashers import check_password
 
 from rest_framework import status, viewsets
 from rest_framework.response import Response
+from rest_framework.decorators import action
 
 from apps.users.models import User
 
-from apps.users.api.serializers.serializers import UserSerializer, UserListSerializer, UserUpdateSerializer
+from apps.users.api.serializers.serializers import UserSerializer, UserListSerializer, UserUpdateSerializer, PasswordSerializer
 
 class UserViewSet(viewsets.GenericViewSet):
     model = User
     serializer_class = UserSerializer
     list_serializer_class = UserListSerializer
     update_serializer_class = UserUpdateSerializer
+    password_serializer_class = PasswordSerializer
     queryset = None
 
     '''
@@ -69,6 +72,25 @@ class UserViewSet(viewsets.GenericViewSet):
     '''
     --------------PERSONALIZATED VIEWS-------------
     '''
-    #Set_password
+
+    @action(detail = True, methods = ['POST'], url_path = 'change_password')
+    def set_password(self, request, pk = None):
+        user = self.get_object(pk)
+        password_serializer = self.password_serializer_class(data = request.data)  
+
+        if password_serializer.is_valid():
+            if check_password(password_serializer.validated_data['password_old'], user.password):
+                user.set_password(password_serializer.validated_data['password'])
+                user.save()
+                return Response({'message': 'Contraseña actualizada correctamente'}, status = status.HTTP_200_OK)
+            else:
+                return Response({'message': 'Contraseña actual invalida'}, status = status.HTTP_400_BAD_REQUEST)
+        
+        return Response({
+            'message': 'Hay errores en la contraseña enviada',
+            'errors': password_serializer.errors
+        }, status = status.HTTP_400_BAD_REQUEST)
+
+
 
     #Revivr user
