@@ -91,6 +91,10 @@ class UserViewSet(viewsets.GenericViewSet):
             'errors': password_serializer.errors
         }, status = status.HTTP_400_BAD_REQUEST)
 
-
-
-    #Revivr user
+    @action(detail = True, methods= ['POST'], url_path = 'active_user')
+    def active_user(self, request, pk = None):
+        user_active = self.model.objects.filter(id = pk).update(is_active = True)
+        if user_active == 1:
+            return Response({'message': 'Usuario habilitado nuevamente'}, status = status.HTTP_200_OK)
+        else:
+            Response({'message': "Usuario invalido"}, status = status.HTTP_404_NOT_FOUND)
