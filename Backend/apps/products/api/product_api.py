@@ -64,3 +64,11 @@ class ProductViewSet(viewsets.GenericViewSet):
     '''
     --------------PERSONALIZATED VIEWS-------------
     '''
+
+    @action(detail = True, methods= ['POST'], url_path = 'active_product')
+    def active_product(self, request, pk = None):
+        product_active = self.model.objects.filter(pk = pk).update(state = True)
+        if product_active == 1:
+            return Response({'message': 'Producto habilitado nuevamente'}, status = status.HTTP_200_OK)
+        else:
+            Response({'message': "Producto invalido"}, status = status.HTTP_404_NOT_FOUND)
