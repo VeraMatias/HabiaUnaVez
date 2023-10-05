@@ -34,13 +34,13 @@ class Supplier(BaseModel):
         return self.name
     
 class Product(BaseModel):
-    code = models.IntegerField(primary_key = True, blank = False, null = False, unique = True)
-    quantity = models.IntegerField(blank = False, null = False, default = 1)
-    cost = models.IntegerField(blank = False, null = False, default = 0)
-    price = models.IntegerField(blank = False, null = False, default = 0)
+    code = models.IntegerField('Codigo', primary_key = True, blank = False, null = False, unique = True)
+    quantity = models.IntegerField('Cantidad', blank = False, null = False, default = 1)
+    cost = models.IntegerField('Costo', blank = False, null = False)
+    price = models.IntegerField('Precio', blank = False, null = False)
     description = models.CharField('Descripcion', max_length = 100, blank = True, null = True)
     category_product = models.ForeignKey(CategoryProduct, on_delete = models.CASCADE, verbose_name = "Categoria de Producto", blank = False, null = False)
-    image = models.ImageField('Imagen del Producto', upload_to ='products/', blank=True, null=True)
+    image = models.ImageField('Imagen del Producto', upload_to ='products/', blank = True, null = True)
     supplier = models.ForeignKey(Supplier, verbose_name = 'Proveedor', on_delete = models.CASCADE, blank = False, null = False)
 
     class Meta:
@@ -48,4 +48,4 @@ class Product(BaseModel):
         verbose_name_plural = 'Productos'
 
     def __str__(self):
-        return self.code
+        return str(self.code)
