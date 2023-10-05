@@ -7,14 +7,16 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         exclude = ('state','created_date','modified_date','deleted_date',)
 
-        def validate(self,data):
-            if 'category_product'  not in data.keys():
-                raise serializers.ValidationError('Debe ingresar una categoria de producto')
-            
-            if 'supplier'  not in data.keys():
-                raise serializers.ValidationError('Debe ingresar un proveedor')
-            
-            return data
+    def validate(self,data):
+        if 'category_product'  not in data.keys():
+            raise serializers.ValidationError('Debe ingresar una categoria de producto')
+        
+        if 'supplier'  not in data.keys():
+            raise serializers.ValidationError('Debe ingresar un proveedor')
+        
+        if len(str(data['code'])) < 6:
+            raise serializers.ValidationError('Debe ingresar un codigo de 6 digitos')
+        return data
         
     def to_representation(self, instance):
         return {
