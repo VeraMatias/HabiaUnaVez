@@ -20,11 +20,11 @@ class Supplier(BaseModel):
     url = models.URLField('Pagina Web', max_length = 200)
     
     ARMHOLE = [
-        ("C", "Chica"),
-        ("N", "Normal"),
-        ("G", "Grande"),
+        ("Chica", "Chica"),
+        ("Normal", "Normal"),
+        ("Grande", "Grande"),
     ]
-    armhole = models.CharField('Moldería', max_length = 1, choices = ARMHOLE)
+    armhole = models.CharField('Moldería', max_length = 6, choices = ARMHOLE)
 
     class Meta:
         verbose_name = "Proveedor"

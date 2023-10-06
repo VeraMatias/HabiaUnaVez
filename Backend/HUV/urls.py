@@ -6,3 +6,4 @@ urlpatterns = [
     path('users/', include('apps.users.api.routers')),
     path('products/', include('apps.products.api.routers'))
 ]
+
