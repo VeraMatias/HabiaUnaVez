@@ -11,3 +11,13 @@ class SentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sent
         exclude = ('state','created_date','modified_date','deleted_date',)
+
+class ReceivedSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Received
+        exclude = ('state','created_date','modified_date','deleted_date',)
+
+class ExistReceivedSerializer(serializers.Serializer):
+    bag_id = serializers.IntegerField()
+    received_code = serializers.IntegerField()

@@ -36,7 +36,7 @@ class SentViewSet(viewsets.GenericViewSet):
         if sent_serializer.is_valid():
             sent_serializer.save()
             return Response({'message': 'Productos enviados cargado correctamente'}, status = status.HTTP_201_CREATED)
-        return Response({'message': "Hay errores en los productoos enviados", 'errors': sent_serializer.errors}, status = status.HTTP_400_BAD_REQUEST)
+        return Response({'message': "Hay errores en los productos enviados", 'errors': sent_serializer.errors}, status = status.HTTP_400_BAD_REQUEST)
     
     def retrieve(self, request, pk = None):
         sent = self.get_object(pk)
