@@ -21,3 +21,9 @@ class ReceivedSerializer(serializers.ModelSerializer):
 class ExistReceivedSerializer(serializers.Serializer):
     bag_id = serializers.IntegerField()
     received_code = serializers.IntegerField()
+
+class NotReceivedSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Not_received
+        exclude = ('state','created_date','modified_date','deleted_date',)
