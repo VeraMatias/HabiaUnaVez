@@ -27,3 +27,10 @@ class NotReceivedSerializer(serializers.ModelSerializer):
     class Meta:
         model = Not_received
         exclude = ('state','created_date','modified_date','deleted_date',)
+
+
+class BagsSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Bags
+        exclude = ('state','created_date','modified_date','deleted_date',)
