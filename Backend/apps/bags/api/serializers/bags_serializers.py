@@ -1,4 +1,4 @@
-from apps.bags.models import Institution, Sent, Received, Not_received, Bags, ProductSent
+from apps.bags.models import Institution, Sent, Received, Not_received, Bags, ProductSent, ProductReceived
 from rest_framework import serializers
 
 class InstitutionSerializer(serializers.ModelSerializer):
@@ -21,6 +21,7 @@ class ReceivedSerializer(serializers.ModelSerializer):
 class ExistReceivedSerializer(serializers.Serializer):
     bag_id = serializers.IntegerField()
     received_code = serializers.IntegerField()
+    received_quantity = serializers.IntegerField()
 
 class NotReceivedSerializer(serializers.ModelSerializer):
 
@@ -38,4 +39,9 @@ class BagsSerializer(serializers.ModelSerializer):
 class ProductSentSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductSent
+        fields = '__all__'
+
+class ProductReceivedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductReceived
         fields = '__all__'

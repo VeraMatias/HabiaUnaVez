@@ -21,19 +21,31 @@ class ProductSent(models.Model):
     quantity = models.PositiveIntegerField()
 
     class Meta:
-        verbose_name = "Relacion productos enviados"
-        verbose_name_plural = "Relaciones productos enviados"
+        verbose_name = "Producto enviado"
+        verbose_name_plural = "Productos enviados"
 
     def __str__(self):
         return str(self.id)
     
 class Received(BaseModel):
     id = models.AutoField(primary_key = True)
-    products = models.ManyToManyField(Product, verbose_name= 'productos recibidos')
+    products = models.ManyToManyField(Product, through = 'productreceived', verbose_name= 'productos recibidos')
 
     class Meta:
         verbose_name = "Recibido"
         verbose_name_plural = "Recibidos"
+
+    def __str__(self):
+        return str(self.id)
+    
+class ProductReceived(models.Model):
+    received = models.ForeignKey(Received, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()
+
+    class Meta:
+        verbose_name = "Producto recibido"
+        verbose_name_plural = "Productos recibidos"
 
     def __str__(self):
         return str(self.id)

@@ -74,16 +74,3 @@ class ReceivedViewSet(viewsets.GenericViewSet):
         else:
             Response({'message': "Productos recibidos invalidos"}, status = status.HTTP_404_NOT_FOUND)
 
-    @action(detail = False, methods= ['POST'], url_path = 'exist_in_sent')
-    def exist_in_sent(self, request):
-        received_product_serializer = self.exist_serializer(data = request.data)
-        if received_product_serializer.is_valid():
-            bag_id = received_product_serializer.validated_data['bag_id']
-            received_code = received_product_serializer.validated_data['received_code']
-            bag = get_object_or_404(Bags, pk = bag_id)
-
-            if bag.products_sent.products.filter(pk = received_code):
-                return Response({'message': 'Producto existente en enviados'}, status = status.HTTP_200_OK)
-            return Response({'message': 'Producto inexistente en enviados'}, status = status.HTTP_200_OK)
-            
-        
