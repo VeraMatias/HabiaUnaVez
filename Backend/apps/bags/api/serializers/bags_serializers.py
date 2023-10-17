@@ -1,4 +1,4 @@
-from apps.bags.models import Institution, Sent, Received, Not_received, Bags
+from apps.bags.models import Institution, Sent, Received, Not_received, Bags, ProductSent
 from rest_framework import serializers
 
 class InstitutionSerializer(serializers.ModelSerializer):
@@ -30,7 +30,12 @@ class NotReceivedSerializer(serializers.ModelSerializer):
 
 
 class BagsSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Bags
         exclude = ('state','created_date','modified_date','deleted_date',)
+
+
+class ProductSentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductSent
+        fields = '__all__'

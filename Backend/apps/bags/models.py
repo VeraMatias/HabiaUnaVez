@@ -6,11 +6,23 @@ from apps.products.models import Product
 
 class Sent(BaseModel):
     id = models.AutoField(primary_key = True)
-    products = models.ManyToManyField(Product, verbose_name= 'productos enviados')
+    products = models.ManyToManyField(Product, through = 'productsent', verbose_name= 'productos enviados')
 
     class Meta:
         verbose_name = "Enviado"
         verbose_name_plural = "Enviados"
+
+    def __str__(self):
+        return str(self.id)
+    
+class ProductSent(models.Model):
+    sent = models.ForeignKey(Sent, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()
+
+    class Meta:
+        verbose_name = "Relacion productos enviados"
+        verbose_name_plural = "Relaciones productos enviados"
 
     def __str__(self):
         return str(self.id)
