@@ -4,12 +4,12 @@ from rest_framework import status, viewsets
 from rest_framework.response import Response
 from rest_framework.decorators import action
 
-from apps.bags.models import Not_received
+from apps.bags.models import NotReceived
 
 from apps.bags.api.serializers.bags_serializers import NotReceivedSerializer
 
 class NotReceivedViewSet(viewsets.GenericViewSet):
-    model = Not_received
+    model = NotReceived
     serializer_class = NotReceivedSerializer
 
     '''

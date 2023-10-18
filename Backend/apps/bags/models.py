@@ -50,13 +50,25 @@ class ProductReceived(models.Model):
     def __str__(self):
         return str(self.id)
     
-class Not_received(BaseModel):
+class NotReceived(BaseModel):
     id = models.AutoField(primary_key = True)
-    products = models.ManyToManyField(Product, verbose_name= 'productos no devueltos')
+    products = models.ManyToManyField(Product, through = 'productnotreceived', verbose_name= 'productos no recibidos')
 
     class Meta:
         verbose_name = "No devuelto"
         verbose_name_plural = "No devueltos"
+
+    def __str__(self):
+        return str(self.id)
+    
+class ProductNotReceived(models.Model):
+    not_received = models.ForeignKey(NotReceived, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()
+
+    class Meta:
+        verbose_name = "Producto no devuelto"
+        verbose_name_plural = "Productos no devueltos"
 
     def __str__(self):
         return str(self.id)
@@ -78,7 +90,7 @@ class Bags(BaseModel):
     institution = models.ForeignKey(Institution, on_delete = models.CASCADE, verbose_name = "Institucion", blank = False, null = False)
     products_sent = models.ForeignKey(Sent, on_delete = models.CASCADE, verbose_name = "Productos Enviados", blank = False, null = False)
     products_received = models.ForeignKey(Received, on_delete = models.CASCADE, verbose_name = "Productos Recibidos", blank = True, null = True)
-    products_not_received = models.ForeignKey(Not_received, on_delete = models.CASCADE, verbose_name = "Productos No Devueltos", blank = True, null = True)
+    products_not_received = models.ForeignKey(NotReceived, on_delete = models.CASCADE, verbose_name = "Productos No Devueltos", blank = True, null = True)
 
     class Meta:
         verbose_name = "Bolso"
