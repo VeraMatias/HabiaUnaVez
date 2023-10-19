@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap');
+
+:root {
+    --clr-main: #04a7e0;
+    --clr-main-light: #9be3fd;
+    --clr-main-dark: #0282b1;
+    --clr-violet: #8e45a3;
+    --clr-white: #ffffff;
+    --clr-black: #000000;
+    --clr-gray: #e2e2e2;
+    --clr-red: #961818;
+}
