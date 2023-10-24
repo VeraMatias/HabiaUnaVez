@@ -1,0 +1,186 @@
+@import url('../../styles/styles_base.css');
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    background-color: var(--clr-background);
+    z-index: 100;
+    transition: all 0.5s ease;
+    transition-delay: 0.1s;
+    font-family: 'Poppins', sans-serif;;
+}
+
+.sidebar.close{
+    width: 78px;
+}
+
+.menu-details{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--clr-main-dark);
+}
+
+.menu-details i{
+    font-size: 30px;
+    color: var(--clr-black);
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.menu-name{
+    font-size: 25px;
+    color: var(--clr-black);
+    font-weight: 400;
+    transition: 0.2s ease;
+    transition-delay: 0.28s;
+}
+
+.close .menu-name{
+    transition-delay: 0s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav-links{
+    height: 100%;
+    padding-top: 30px;
+}
+
+.sidebar .nav-links li .icon-link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.sidebar .nav-links li{
+    position: relative;
+    list-style: none;
+    font-size: 20px;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li:hover{
+    background-color:var(--clr-submenu)
+}
+
+.sidebar .nav-links li i{
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    color: var(--clr-white);
+}
+
+.sidebar.close .bx-chevron-down{
+    display: none;
+}
+.rotate{
+    transform: rotate(180deg);
+}
+
+.sidebar .nav-links li a {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .nav-links li a .link-name{
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--clr-white);
+}
+
+.close .link-name{
+    display: none;
+}
+
+.sidebar .nav-links li .sub-menu{
+    padding: 6px 6px 14px 80px;
+    margin-top: -10px;
+    background-color: var(--clr-submenu) ;
+    display: none;
+}
+
+.sidebar .nav-links li.show-menu .sub-menu{
+    display: block;
+}
+
+.sidebar .nav-links li .sub-menu a{
+    font-size: 15px;
+    color: var(--clr-white);
+    padding: 5px 0;
+    opacity: 0.6;
+    transition: all 0.4 ease;
+}
+
+.sidebar .nav-links li .sub-menu a:hover{
+    opacity: 1;
+}
+
+.close .nav-links li .sub-menu{
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+}
+
+.close .nav-links li:hover .sub-menu{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar .nav-links li .sub-menu .submenu-link-name{
+    display: none;
+}
+
+.close .nav-links li .sub-menu .submenu-link-name{
+    font-size: 18px;
+    opacity: 1;
+    display: block;
+}
+
+.sidebar .nav-links li .sub-menu .submenu-link-name .blank{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.home-section{
+    position: relative;
+    background-color: var(--clr-main-dark);
+    left: 260px;
+    width: calc(100% - 260px);
+    transition: all 0.5s ease;
+    transition-delay: 0.1s;
+}
+
+.sidebar.close ~ .home-section{
+    left: 78px;
+    width: calc(100% - 78px)
+}
+
+.home-section{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    color: var(--clr-black);
+    font-family: 'Dancing Script', cursive;
+    font-size: 35px;
+    font-weight: 600;
+}
