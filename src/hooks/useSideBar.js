@@ -5,7 +5,6 @@ export const useSideBar = () =>{
         {id: 1, name: 'Productos', icon: 'bx bxs-t-shirt', sub_menus: ['Listar', 'Crear', 'Modificar', 'Eliminar']},
         {id: 2, name: 'Bolsos', icon: 'bx bx-shopping-bag', sub_menus: ['Listar', 'Crear', 'Modificar', 'Eliminar', 'Visor']},
         {id: 3, name: 'Proveedores', icon: 'bx bx-store', sub_menus: ['Listar', 'Crear', 'Modificar', 'Eliminar']},
-        {id: 4, name: 'Instituciones', icon: 'bx bx-buildings', sub_menus: ['Listar', 'Crear', 'Modificar', 'Eliminar']},
     ]
 
     const [showItems, setShowItems] = useState({})

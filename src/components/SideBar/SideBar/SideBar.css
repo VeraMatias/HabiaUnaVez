@@ -40,7 +40,7 @@
     color: var(--clr-black);
     font-weight: 400;
     transition: 0.5s ease;
-
+    transition-delay: 0.25s;
 }
 
 .close .menu-name{
@@ -77,10 +77,13 @@
     text-align: center;
     line-height: 50px;
     color: var(--clr-white);
+    transition-delay: 0.3s;
 }
 
 .sidebar.close .bx-chevron-down{
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transition-delay: 0.1s;
 }
 
 .rotate{
@@ -92,14 +95,22 @@
     align-items: center;
 }
 
+.close .nav-links li a {
+    width: 78px;
+}
+
 .link-name{
     font-size: 18px;
     font-weight: 400;
     color: var(--clr-white);
+    transition: 0.5s ease;
+    transition-delay: 0.2s;
 }
 
 .close .link-name{
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transition-delay: 0.1s;
 }
 
 .sub-menu{
@@ -136,6 +147,7 @@
     opacity: 0;
     display: block;
     pointer-events: none;
+    width: 150px;
 }
 
 .close li:hover .sub-menu{

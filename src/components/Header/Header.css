@@ -3,6 +3,10 @@
 
 .home-section{
     position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--clr-main);
     left: 270px;
     width: calc(100% - 270px);
@@ -13,13 +17,6 @@
 .sidebar.close ~ .home-section{
     left: 78px;
     width: calc(100% - 78px)
-}
-
-.home-section{
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .title{

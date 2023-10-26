@@ -1,0 +1,23 @@
+@import url('../styles/styles_base.css');
+
+.container{ 
+    background-color: var(--clr-white);
+    position: absolute;
+    left: 270px;
+    width: calc(100% - 270px);
+    height: calc(100% - 60px);
+    transition: all 0.5s ease;
+    transition-delay: 0.1s;
+    padding: 2rem;
+    padding-top: 1rem;
+    overflow-y: scroll;
+}
+
+.sidebar.close ~ .container{
+    left: 78px;
+    width: calc(100% - 78px);
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}

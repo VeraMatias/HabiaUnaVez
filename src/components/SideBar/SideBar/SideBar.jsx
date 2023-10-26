@@ -16,8 +16,9 @@ const SideBar = () =>{
             </div>
 
             <ul className="nav-links">
-                <SimpleItemMenu icon = 'bx bxs-dashboard' name = 'Dashboard'/>
+                <SimpleItemMenu icon = 'bx bxs-dashboard' name = 'Dashboard' url= '/'/>
                 {data_categories.map(item => (<ItemMenu item={item}/>))}
+                <SimpleItemMenu icon = 'bx bx-buildings' name = 'Instituciones' url = '/institutions'/>
             </ul>
         </div>
     )
