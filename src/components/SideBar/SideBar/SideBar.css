@@ -22,7 +22,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: var(--clr-main-dark);
+    background-color: var(--clr-main);
 }
 
 .menu-details i{
@@ -32,18 +32,18 @@
     min-width: 78px;
     text-align: center;
     line-height: 50px;
+    cursor: pointer;
 }
 
 .menu-name{
     font-size: 25px;
     color: var(--clr-black);
     font-weight: 400;
-    transition: 0.2s ease;
-    transition-delay: 0.28s;
+    transition: 0.5s ease;
+
 }
 
 .close .menu-name{
-    transition-delay: 0s;
     opacity: 0;
     pointer-events: none;
 }
@@ -156,32 +156,4 @@
 .submenu-link-name .blank{
     opacity: 1;
     pointer-events: auto;
-}
-
-.home-section{
-    position: relative;
-    background-color: var(--clr-main-dark);
-    left: 270px;
-    width: calc(100% - 270px);
-    transition: all 0.5s ease;
-    transition-delay: 0.1s;
-}
-
-.sidebar.close ~ .home-section{
-    left: 78px;
-    width: calc(100% - 78px)
-}
-
-.home-section{
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.title{
-    color: var(--clr-black);
-    font-family: 'Dancing Script', cursive;
-    font-size: 35px;
-    font-weight: 600;
 }

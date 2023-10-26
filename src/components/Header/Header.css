@@ -1,0 +1,30 @@
+@import url('../../styles/styles_base.css');
+
+
+.home-section{
+    position: relative;
+    background-color: var(--clr-main);
+    left: 270px;
+    width: calc(100% - 270px);
+    transition: all 0.5s ease;
+    transition-delay: 0.1s;
+}
+
+.sidebar.close ~ .home-section{
+    left: 78px;
+    width: calc(100% - 78px)
+}
+
+.home-section{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    color: var(--clr-black);
+    font-family: 'Dancing Script', cursive;
+    font-size: 35px;
+    font-weight: 600;
+}
