@@ -13,7 +13,6 @@ function App() {
       <SideBar/>
       <Header/>
       <Routes>
-        <Route path = '/institutions' element = {<Wrapper/>}/>
 
       </Routes>
       </BrowserRouter>

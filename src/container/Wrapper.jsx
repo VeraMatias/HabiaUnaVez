@@ -1,11 +1,10 @@
 import './Wrapper.css'
 
 
-const Wrapper = () => {
+const Wrapper = ({children}) => {
     return(
         <div className = 'container'>
-            <h1>hola mundo</h1>
-            {/* {children} */}
+            {children}
         </div>
     )
 }
