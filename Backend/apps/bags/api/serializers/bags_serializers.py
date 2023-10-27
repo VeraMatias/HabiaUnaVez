@@ -6,6 +6,13 @@ class InstitutionSerializer(serializers.ModelSerializer):
         model = Institution
         exclude = ('state','created_date','modified_date','deleted_date',)
 
+    def to_representation(self, instance):
+        return {
+            'id': instance.id,
+            'name': instance.name,
+            'bag_quantity': len(Bags.objects.filter(institution = instance.id))
+        }
+
 class SentSerializer(serializers.ModelSerializer):
 
     class Meta:
