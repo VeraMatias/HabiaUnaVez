@@ -11,13 +11,13 @@ const SideBar = () =>{
     return(
         <div className= {showSideBar ? 'sidebar' : 'sidebar close'}>
             <div className="menu-details">
-                <i class='bx bx-menu' onClick={() => toggleShowSideBar()}></i>
+                <i className='bx bx-menu' onClick={() => toggleShowSideBar()}></i>
                 <span className="menu-name">Menu</span>
             </div>
 
             <ul className="nav-links">
                 <SimpleItemMenu icon = 'bx bxs-dashboard' name = 'Dashboard' url= '/'/>
-                {data_categories.map(item => (<ItemMenu item={item}/>))}
+                {data_categories.map(item => (<ItemMenu key={item.id} item={item}/>))}
                 <SimpleItemMenu icon = 'bx bx-buildings' name = 'Instituciones' url = '/institutions'/>
             </ul>
         </div>

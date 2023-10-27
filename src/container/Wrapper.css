@@ -1,7 +1,7 @@
 @import url('../styles/styles_base.css');
 
 .container{ 
-    background-color: var(--clr-white);
+    background-color: var(--clr-gray-light);
     position: absolute;
     left: 270px;
     width: calc(100% - 270px);

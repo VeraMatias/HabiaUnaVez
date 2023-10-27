@@ -1,0 +1,90 @@
+@import url('../styles/styles_base.css');
+
+.container-institutions{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.institution-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.header-title{
+    font-size: 20px;
+}
+
+.header-button{
+    margin-right: 3rem;
+    background-color: var(--clr-main);
+    padding: .3rem .5rem;
+    border-radius: 1rem;
+    color: var(--clr-white);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.header-button i{
+    margin-right: 5px;
+    font-size: 15px;
+    padding-top: 5px;
+}
+
+.header-button:hover{
+    background-color: var(--clr-main-dark);
+}
+
+.card-institution{
+    background-color: var(--clr-white);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 5px;
+}
+
+.institution-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 250px;
+}
+
+.card-institution h3{
+    font-weight: 400;
+    font-size: 18px;
+    margin-left: -3rem;
+}
+.card-institution span{
+    font-weight: 400;
+    font-size: 14px;
+    opacity: 0.6;
+    margin-left: -3rem;
+}
+
+.institution-bags{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.institution-buttons i{
+    background-color: var(--clr-gray);
+    padding: 0.7rem;
+    margin-left: 1rem;
+    border-radius: 100%;
+    color: var(--clr-main);
+    font-size: 20px;
+}
+
+.institution-buttons i:hover{
+    color: var(--clr-white);
+    background-color: var(--clr-main);
+}

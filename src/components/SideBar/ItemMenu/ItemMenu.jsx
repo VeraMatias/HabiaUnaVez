@@ -15,10 +15,10 @@ const ItemMenu = ({item}) =>{
             <i className = {showItems[item.id] ? 'bx bx-chevron-down rotate': 'bx bx-chevron-down'}></i>
         </div>
         <ul className="sub-menu">
-            <li><Link className='submenu-link-name'>{item.name}</Link></li>
+            <li ><Link className='submenu-link-name'>{item.name}</Link></li>
             {
                 item.sub_menus.map(submenu =>(
-                    <li><Link>{submenu}</Link></li>
+                    <li key = {item.name + submenu} ><Link>{submenu}</Link></li>
                 ))
             }
         </ul>

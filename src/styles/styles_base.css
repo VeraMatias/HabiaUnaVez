@@ -11,6 +11,7 @@
     --clr-white: #ffffff;
     --clr-black: #000000;
     --clr-gray: #e2e2e2;
+    --clr-gray-light: #f3f3f3;
     --clr-red: #961818;
     --clr-background: #19222a;
     --clr-submenu: #1f2d3a;
@@ -24,4 +25,5 @@
 
 a {
     text-decoration: none;
+    color: #000000;
 }
