@@ -2,7 +2,7 @@ import './InstitutionContainer.css'
 
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { getRequest } from '../api/getRequest'
+import { getRequest } from '../api/basicRequest'
 import CardInstitution from '../components/CardInstitution/CardInstitution'
 
 const InstitutionContainter = () =>{

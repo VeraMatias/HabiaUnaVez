@@ -50,4 +50,5 @@
 .institution-buttons i:hover{
     color: var(--clr-white);
     background-color: var(--clr-main);
+    cursor: pointer;
 }
