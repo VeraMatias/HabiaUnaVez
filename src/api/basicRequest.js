@@ -1,11 +1,19 @@
 import axios from 'axios'
 
+const baseURL = process.env.REACT_APP_BASE_URL
+
 export const getRequest = (url) => {
-    // const BASE_URL = process.env.BASE_URL;
-    return axios.get(url)
+    return axios.get(baseURL + url)
 }
 
-export const deleteRquest = (url) => {
-    // const BASE_URL = process.env.BASE_URL;
-    return axios.delete(url)
+export const deleteRequest = (url) => {
+    return axios.delete(baseURL + url)
+}
+
+export const updateRequest = (url, data) => {
+        return axios.put(baseURL + url, data)
+}
+
+export const createRequest = (url, data) => {
+    return axios.post(baseURL + url, data)
 }

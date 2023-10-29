@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import './CardInstitution.css'
-import { Link } from 'react-router-dom'
-import Modal from '../Modal/Modal';
+
+import ModalUpdateCreate from '../Modal/ModalUpdate/ModalUpdateCreate'
+import ModalDelete from '../Modal/ModalDelete/ModalDelete'
 
 const CardInstitution = ({institution}) => {
 
-    const [modalUpdate, setModalUpdate] = useState(false);
+    const [modalUpdate, setModalUpdate] = useState(false)
     const [modalDelete, setModalDelete] = useState (false)
 
     const toggleModalUpdate = () => setModalUpdate(!modalUpdate)
@@ -13,8 +14,8 @@ const CardInstitution = ({institution}) => {
 
     return(
         <>
-        <Modal show={modalUpdate} close={toggleModalUpdate} title={'Modificar Institución'} institution={institution} update = {true}/>
-        <Modal show={modalDelete} close={toggleModalDelete} title={'Eliminar Institución'} institution={institution} update = {false}/>         
+        <ModalUpdateCreate show={modalUpdate} close={toggleModalUpdate} institution={institution} update={true}/>
+        <ModalDelete show={modalDelete} close={toggleModalDelete} institution={institution}/>
         <div className="card-institution">
             <div className="institution-name">
                 <h3>{institution.name}</h3>
@@ -25,8 +26,8 @@ const CardInstitution = ({institution}) => {
                 <span>Bolsos</span>
             </div>
             <div className="institution-buttons">
-                <i className='bx bx-pencil' onClick = {() => toggleModalUpdate('Modificar')}></i>
-                <i className='bx bxs-trash' onClick = {() => toggleModalDelete('Eliminar')}></i>
+                <i className='bx bx-pencil' onClick = {toggleModalUpdate}></i>
+                <i className='bx bxs-trash' onClick = {toggleModalDelete}></i>
             </div>
         </div>       
         </>
