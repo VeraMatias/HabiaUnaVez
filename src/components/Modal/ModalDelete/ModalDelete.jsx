@@ -1,10 +1,10 @@
 import { deleteRequest } from '../../../api/basicRequest'
 import './ModalDelete.css'
 
-const ModalDelete = ({show, close, institution}) => {
+const ModalDelete = ({show, close, item, title}) => {
 
     function  handleDelete() {
-        deleteRequest(`/bags/institution/${institution.id}/`)
+        deleteRequest(`/bags/institution/${item.id}/`)
         window.location.reload()
     }
     
@@ -14,11 +14,11 @@ const ModalDelete = ({show, close, institution}) => {
             <div className="modal-container" onClick={close}>
                 <div className="modal" onClick={(e) => e.stopPropagation()}>
                     <div className="modal-header">
-                        <h2 className="header-title">Eliminar Institución</h2>
+                        <h2 className="header-title">Eliminar {title}</h2>
                     </div>
 
                     <div className="modal-content">
-                        <p>Desea eliminar la institución <span>{institution.name}</span>?</p>
+                        <p>Desea eliminar la {title} <span>{item.name}</span>?</p>
                     </div>
                 
                     <div className="modal-buttons">
