@@ -1,10 +1,10 @@
 import { deleteRequest } from '../../../api/basicRequest'
 import './ModalDelete.css'
 
-const ModalDelete = ({show, close, item, title}) => {
+const ModalDelete = ({show, close, item, title, url}) => {
 
     function  handleDelete() {
-        deleteRequest(`/bags/institution/${item.id}/`)
+        deleteRequest(url + item.id + '/' )
         window.location.reload()
     }
     
