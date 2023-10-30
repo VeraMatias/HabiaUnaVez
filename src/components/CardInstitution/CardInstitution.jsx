@@ -14,7 +14,7 @@ const CardInstitution = ({institution}) => {
 
     return(
         <>
-        <ModalUpdateCreate show={modalUpdate} close={toggleModalUpdate} institution={institution} update={true}/>
+        <ModalUpdateCreate show={modalUpdate} close={toggleModalUpdate} item={institution} update={true} url={'/bags/institution/'} title={'Institución'}/>
         <ModalDelete show={modalDelete} close={toggleModalDelete} item={institution} title={'Institución'} url={'/bags/institution/'}/>
         <div className="card-institution">
             <div className="institution-name">

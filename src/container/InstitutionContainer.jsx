@@ -23,7 +23,7 @@ const InstitutionContainter = () =>{
 
     return(
         <>
-        <ModalUpdateCreate show={modalCreate} close={toggleModalCreate} institution={''} update={false}/>
+        <ModalUpdateCreate show={modalCreate} close={toggleModalCreate} item={''} update={false} url={'/bags/institution/'} title={'Institución'}/>
         <div className="container-institutions">
             <div className="institution-header">
                 <h2 className='header-title'>INSTITUCIONES</h2>

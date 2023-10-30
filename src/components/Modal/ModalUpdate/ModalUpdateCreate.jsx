@@ -3,8 +3,8 @@ import './ModalUpdateCreate.css'
 
 import { createRequest, updateRequest } from '../../../api/basicRequest'
 
-const ModalUpdateCreate = ({show, close, institution, update}) => {
-    const [data, setData]  =useState({name: institution.name})
+const ModalUpdateCreate = ({show, close, item, update, url, title}) => {
+    const [data, setData]  =useState({name: item.name})
 
     const handleInput = (e) =>{
         setData({...data, [e.target.name]: e.target.value})
@@ -12,9 +12,9 @@ const ModalUpdateCreate = ({show, close, institution, update}) => {
 
     function  handleSubmit() {
         update ?
-        updateRequest(`/bags/institution/${institution.id}/`, {name: data.name})
+        updateRequest(url + item.id + '/', {name: data.name})
         :
-        createRequest(`/bags/institution/`, {name: data.name})
+        createRequest(url, {name: data.name})
     }
 
     return(
@@ -23,7 +23,7 @@ const ModalUpdateCreate = ({show, close, institution, update}) => {
             <div className="modal-container" onClick={close}>
                 <div className="modal" onClick={(e) => e.stopPropagation()}>
                     <div className="modal-header">
-                        <h2 className="header-title">{update ? 'Modificar Institución' : 'Crear Institución'}</h2>
+                        <h2 className="header-title">{update ? `Modificar ${title}` : `Crear ${title}`}</h2>
                     </div>
 
                     <div className="modal-content">
