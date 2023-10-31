@@ -15,6 +15,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path = '/institutions' element = {<Wrapper children = {<InstitutionContainter/>} />}/>
+        <Route path = '/categories' element = {<Wrapper children = {<InstitutionContainter/>} />}/>
       </Routes>
       </BrowserRouter>
     </>
