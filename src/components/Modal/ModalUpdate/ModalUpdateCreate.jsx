@@ -1,21 +1,10 @@
-import { useState } from 'react'
 import './ModalUpdateCreate.css'
 
-import { createRequest, updateRequest } from '../../../api/basicRequest'
+import { useModal } from '../../../hooks/useModal'
 
 const ModalUpdateCreate = ({show, close, item, update, url, title}) => {
-    const [data, setData]  =useState({name: item.name})
 
-    const handleInput = (e) =>{
-        setData({...data, [e.target.name]: e.target.value})
-    }
-
-    function  handleSubmit() {
-        update ?
-        updateRequest(url + item.id + '/', {name: data.name})
-        :
-        createRequest(url, {name: data.name})
-    }
+    const {data, handleInput, handleSubmit} = useModal(item, url, update)
 
     return(
         <>
@@ -29,7 +18,7 @@ const ModalUpdateCreate = ({show, close, item, update, url, title}) => {
                     <div className="modal-content">
                         <p>A continuación, ingrese el nombre:</p>
                         <form onSubmit={handleSubmit} id='form-submit'> 
-                            <input type='text' name='name' onChange={handleInput} maxLength={'50'} className='input-name'></input>
+                            <input type='text' name='name' onChange={handleInput} maxLength={'50'} className='input-name' value={data.name}></input>
                         </form>
                     </div>
 

@@ -1,16 +1,12 @@
-import { useState } from 'react'
 import './CardInstitution.css'
 
 import ModalUpdateCreate from '../Modal/ModalUpdate/ModalUpdateCreate'
 import ModalDelete from '../Modal/ModalDelete/ModalDelete'
+import { useCardinstitution } from '../../hooks/useCardinstitution'
 
 const CardInstitution = ({institution}) => {
 
-    const [modalUpdate, setModalUpdate] = useState(false)
-    const [modalDelete, setModalDelete] = useState (false)
-
-    const toggleModalUpdate = () => setModalUpdate(!modalUpdate)
-    const toggleModalDelete = () => setModalDelete(!modalDelete)
+    const {modalUpdate,modalDelete,toggleModalUpdate,toggleModalDelete} = useCardinstitution()
 
     return(
         <>

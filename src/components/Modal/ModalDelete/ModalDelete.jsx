@@ -1,12 +1,9 @@
-import { deleteRequest } from '../../../api/basicRequest'
+import { useModal } from '../../../hooks/useModal'
 import './ModalDelete.css'
 
 const ModalDelete = ({show, close, item, title, url}) => {
 
-    function  handleDelete() {
-        deleteRequest(url + item.id + '/' )
-        window.location.reload()
-    }
+    const {handleDelete} = useModal(item, url)
     
     return(
         <>
