@@ -1,7 +1,7 @@
 @import url('../../styles/styles_base.css');
 
 
-.card-institution{
+.card-item{
     background-color: var(--clr-white);
     display: flex;
     justify-content: space-around;
@@ -13,32 +13,32 @@
     border-radius: 5px;
 }
 
-.institution-name{
+.item-name{
     display: flex;
     flex-direction: column;
     align-items: center;
     min-width: 250px;
 }
 
-.card-institution h3{
+.card-item h3{
     font-weight: 400;
     font-size: 18px;
     margin-left: -3rem;
 }
-.card-institution span{
+.card-item span{
     font-weight: 400;
     font-size: 14px;
     opacity: 0.6;
     margin-left: -3rem;
 }
 
-.institution-bags{
+.item-quantity{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.institution-buttons i{
+.item-buttons i{
     background-color: var(--clr-gray);
     padding: 0.7rem;
     margin-left: 1rem;
@@ -47,7 +47,7 @@
     font-size: 20px;
 }
 
-.institution-buttons i:hover{
+.item-buttons i:hover{
     color: var(--clr-white);
     background-color: var(--clr-main);
     cursor: pointer;

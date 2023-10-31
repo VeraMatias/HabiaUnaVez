@@ -2,7 +2,7 @@ import './InstitutionContainer.css'
 
 import { useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import CardInstitution from '../components/CardInstitution/CardInstitution'
+import CardItem from '../components/CardItem/CardItem'
 import ModalUpdateCreate from '../components/Modal/ModalUpdate/ModalUpdateCreate'
 import { useInstitutionContainer } from '../hooks/useInstitutionContainer'
 
@@ -27,7 +27,7 @@ const InstitutionContainter = () =>{
                 </div>
             </div>
             {institution.map( institution =>(
-                    <CardInstitution key={institution.id} institution={institution}/>
+                    <CardItem key={institution.id} institution={institution} name={institution.name} nameColumn1={'Nombre'} quantity={institution.bag_quantity} nameColumn2={'Bolsos'}/>
                 ))
             }
         </div>
