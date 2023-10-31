@@ -1,25 +1,17 @@
 import './InstitutionContainer.css'
 
-import { useEffect, useState } from 'react'
+import { useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import { getRequest } from '../api/basicRequest'
 import CardInstitution from '../components/CardInstitution/CardInstitution'
 import ModalUpdateCreate from '../components/Modal/ModalUpdate/ModalUpdateCreate'
+import { useInstitutionContainer } from '../hooks/useInstitutionContainer'
+
 
 const InstitutionContainter = () =>{
 
-    const [institution, setInstitution] = useState([])
-    const [modalCreate, setModalCreate] = useState(false)
+    const {institution, modalCreate, toggleModalCreate, loadInstitution} = useInstitutionContainer()
 
-    const toggleModalCreate = () => setModalCreate(!modalCreate)
-
-    useEffect(() =>{
-        async function loadInstitution(){
-            const res = await getRequest('/bags/institution/')
-            setInstitution(res.data)
-        }
-        loadInstitution();
-    },[])
+    useEffect(() =>{loadInstitution();},[])
 
     return(
         <>

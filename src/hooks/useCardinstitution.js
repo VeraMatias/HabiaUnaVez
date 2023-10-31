@@ -1,6 +1,5 @@
 import { useState } from 'react'
 
-
 export const useCardinstitution = () =>{
     const [modalUpdate, setModalUpdate] = useState(false)
     const [modalDelete, setModalDelete] = useState (false)
