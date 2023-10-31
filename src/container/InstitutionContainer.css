@@ -18,22 +18,3 @@
 .header-title{
     font-size: 20px;
 }
-
-.header-button{
-    margin-right: 3rem;
-    background-color: var(--clr-main);
-    padding: .3rem .5rem;
-    border-radius: 1rem;
-    color: var(--clr-white);
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-
-.header-button i{
-    margin-right: 5px;
-    font-size: 15px;
-    padding-top: 5px;
-}
-
-.header-button:hover{
-    background-color: var(--clr-main-dark);
-}

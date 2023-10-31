@@ -1,10 +1,11 @@
 import './InstitutionContainer.css'
 
 import { useEffect} from 'react'
-import { Link } from 'react-router-dom'
+
 import CardItem from '../components/CardItem/CardItem'
 import ModalUpdateCreate from '../components/Modal/ModalUpdate/ModalUpdateCreate'
 import { useInstitutionContainer } from '../hooks/useInstitutionContainer'
+import ButtonNew from '../components/General/ButtonNew/ButtonNew'
 
 
 const InstitutionContainter = () =>{
@@ -20,10 +21,7 @@ const InstitutionContainter = () =>{
             <div className="institution-header">
                 <h2 className='header-title'>INSTITUCIONES</h2>
                 <div className="header-buttons">
-                    <Link className= 'header-button' onClick = {toggleModalCreate}>
-                        <i className='bx bx-plus'></i>
-                        Nueva
-                    </Link> 
+                    <ButtonNew onClick ={toggleModalCreate}/>
                 </div>
             </div>
             {institution.map( institution =>(
