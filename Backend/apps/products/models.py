@@ -5,7 +5,7 @@ from apps.base.models import BaseModel
 
 class CategoryProduct(BaseModel):
     id = models.AutoField(primary_key= True)
-    description = models.CharField('Descripcion', max_length = 50, blank = False, null = False, unique = True)
+    name = models.CharField('Descripcion', max_length = 50, blank = False, null = False, unique = True)
 
     class Meta:
         verbose_name = "Categoria de Producto"

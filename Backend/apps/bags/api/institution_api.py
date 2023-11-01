@@ -29,7 +29,6 @@ class InstitutionViewSet(viewsets.GenericViewSet):
     def list(self, request):
         institution = self.get_queryset()
         institution_serializers = self.serializer_class(institution, many = True)
-        print(institution_serializers.data)
         return Response(institution_serializers.data, status = status.HTTP_200_OK)
     
     def create(self, request):
