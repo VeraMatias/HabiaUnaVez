@@ -12,7 +12,7 @@ class CategoryProduct(BaseModel):
         verbose_name_plural = "Categorias de Productos"
 
     def __str__(self):
-        return self.description
+        return self.name
     
 class Supplier(BaseModel):
     id = models.AutoField(primary_key = True)
