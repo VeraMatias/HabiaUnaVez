@@ -25,7 +25,7 @@ const InstitutionContainter = () =>{
                 </div>
             </div>
             {institution.map( institution =>(
-                    <CardItem key={institution.id} item={institution} name={institution.name} nameColumn1={'Nombre'} quantity={institution.bag_quantity} nameColumn2={'Bolsos'}/>
+                    <CardItem key={institution.id} item={institution} name={institution.name} nameColumn1={'Nombre'} quantity={institution.bag_quantity} nameColumn2={'Bolsos'} url={'/bags/institution/'}/>
                 ))
             }
         </div>

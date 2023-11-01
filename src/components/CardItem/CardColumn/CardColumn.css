@@ -1,0 +1,22 @@
+.item-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.large{
+    min-width: 250px;
+}
+
+.item-column h3{
+    font-weight: 400;
+    font-size: 18px;
+    margin-left: -3rem;
+}
+.item-column span{
+    font-weight: 400;
+    font-size: 14px;
+    opacity: 0.6;
+    margin-left: -3rem;
+}
