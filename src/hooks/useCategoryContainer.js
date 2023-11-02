@@ -8,7 +8,12 @@ export const useCategoryContainer = () =>{
 
     async function loadCategory(){
         const res = await getRequest('/products/category_product/')
-        setCategory(res.data)
+        let data = []
+
+        for(let i = 0; i < res.data.length; i++){
+            data.push({id: res.data[i].id, name: res.data[i].name, nameColumn1: 'Nombre', quantity: res.data[i].product_quantity, nameColumn2: 'Productos', nameColumn3: '', nameColumn4: ''})
+        }
+        setCategory(data)
     }
 
     return {category, setCategory, modalCreate, toggleModalCreate, loadCategory}
