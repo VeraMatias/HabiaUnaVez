@@ -24,7 +24,7 @@ const InstitutionContainter = () =>{
                     <ButtonNew onClick ={toggleModalCreate}/>
                 </div>
             </div>
-            {institution.map( institution =>(<CardItem key={institution.id} item={institution} url={'/bags/institution/'}/>))}
+            {institution.map( institution =>(<CardItem key={institution.id} item={institution} url={'/bags/institution/'} title={'Institución'}/>))}
         </div>
         </>
     )

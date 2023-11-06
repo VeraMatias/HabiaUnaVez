@@ -7,6 +7,7 @@ import Header from './components/Header/Header';
 import Wrapper from './container/Wrapper';
 import InstitutionContainter from './container/InstitutionContainer';
 import CategoryContainer from './container/CategoryContainer';
+import SupplierContainer from './container/SupplierContainer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path = '/institutions' element = {<Wrapper children = {<InstitutionContainter/>} />}/>
         <Route path = '/categories' element = {<Wrapper children = {<CategoryContainer/>} />}/>
+        <Route path = '/suppliers' element = {<Wrapper children = {<SupplierContainer/>} />}/>
       </Routes>
       </BrowserRouter>
     </>

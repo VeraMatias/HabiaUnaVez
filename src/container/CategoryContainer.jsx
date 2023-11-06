@@ -25,7 +25,7 @@ const CategoryContainer = () =>{
                 </div>
             </div>
             {category.map( category =>(
-                    <CardItem key={category.id} item={category} url={'/products/category_product/'}/>
+                    <CardItem key={category.id} item={category} url={'/products/category_product/'} title={'Categoría'}/>
                 ))
             }
         </div>
