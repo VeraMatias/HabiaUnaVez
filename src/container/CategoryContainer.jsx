@@ -3,9 +3,11 @@ import './CategoryContainer.css'
 import { useEffect} from 'react'
 
 import CardItem from '../components/CardItem/CardItem'
-import ModalUpdateCreate from '../components/Modal/ModalUpdate/ModalUpdateCreate'
 import ButtonNew from '../components/General/ButtonNew/ButtonNew'
 import { useCategoryContainer } from '../hooks/useCategoryContainer'
+import ModalContainer from './ModalContainer'
+import GenericUpdate from '../components/Modal/ModalUpdate/GenericUpdate'
+import GenericCreate from '../components/Modal/ModalCreate/GenericCreate'
 
 
 const CategoryContainer = () =>{
@@ -16,7 +18,7 @@ const CategoryContainer = () =>{
 
     return(
         <>
-        <ModalUpdateCreate show={modalCreate} close={toggleModalCreate} item={''} update={false} url={'/products/category_product/'} title={'Categoría'}/>
+        <ModalContainer show={modalCreate} close={toggleModalCreate} title={'Crear Categoría'} modalContent={<GenericCreate item={''} url={'/products/category_product/'}/>}/>
         <div className="container-category">
             <div className="category-header">
                 <h2 className='header-title'>CATEGORIAS</h2>
@@ -24,10 +26,7 @@ const CategoryContainer = () =>{
                     <ButtonNew onClick ={toggleModalCreate}/>
                 </div>
             </div>
-            {category.map( category =>(
-                    <CardItem key={category.id} item={category} url={'/products/category_product/'} title={'Categoría'}/>
-                ))
-            }
+            {category.map( category =>(<CardItem key={category.id} item={category} url={'/products/category_product/'} title={'Categoría'} modalContent={<GenericUpdate item={category} url={'/products/category_product/'}/>}/>))}
         </div>
         </>
     )

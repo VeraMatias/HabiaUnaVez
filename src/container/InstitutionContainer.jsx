@@ -3,10 +3,11 @@ import './InstitutionContainer.css'
 import { useEffect} from 'react'
 
 import CardItem from '../components/CardItem/CardItem'
-import ModalUpdateCreate from '../components/Modal/ModalUpdate/ModalUpdateCreate'
 import { useInstitutionContainer } from '../hooks/useInstitutionContainer'
 import ButtonNew from '../components/General/ButtonNew/ButtonNew'
-
+import ModalContainer from './ModalContainer'
+import GenericUpdate from '../components/Modal/ModalUpdate/GenericUpdate'
+import GenericCreate from '../components/Modal/ModalCreate/GenericCreate'
 
 const InstitutionContainter = () =>{
 
@@ -16,7 +17,7 @@ const InstitutionContainter = () =>{
 
     return(
         <>
-        <ModalUpdateCreate show={modalCreate} close={toggleModalCreate} item={''} update={false} url={'/bags/institution/'} title={'Institución'}/>
+        <ModalContainer show={modalCreate} close={toggleModalCreate} title={'Crear Institución'} modalContent={<GenericCreate item={''} url={'/bags/institution/'}/>}/>
         <div className="container-institutions">
             <div className="institution-header">
                 <h2 className='header-title'>INSTITUCIONES</h2>
@@ -24,7 +25,7 @@ const InstitutionContainter = () =>{
                     <ButtonNew onClick ={toggleModalCreate}/>
                 </div>
             </div>
-            {institution.map( institution =>(<CardItem key={institution.id} item={institution} url={'/bags/institution/'} title={'Institución'}/>))}
+            {institution.map( institution =>(<CardItem key={institution.id} item={institution} url={'/bags/institution/'} title={'Institución'} modalContent={<GenericUpdate item={institution} url={'/bags/institution/'}/>}/>))}
         </div>
         </>
     )

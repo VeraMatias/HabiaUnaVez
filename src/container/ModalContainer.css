@@ -1,4 +1,4 @@
-@import url('../../../styles/styles_base.css');
+@import url('../styles/styles_base.css');
 
 .modal-container{
     position: fixed;
@@ -28,34 +28,6 @@
 
 .header-title{
     text-align: center;
-}
-
-.modal-content{
-    border-bottom: 1px solid var(--clr-gray);
-    padding: 1rem;
-}
-
-.modal-content span{
-    font-weight: 800;
-}
-
-.input-name{
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    font-family: inherit;
-    font-size: 16px;
-    font-weight: 800;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.input-name:focus{
-    border: 1px solid var(--clr-main);
-    outline: none;
-    box-shadow: 0 0 5px var(--clr-main);
 }
 
 .modal-buttons{

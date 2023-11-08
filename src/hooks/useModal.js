@@ -1,26 +1,23 @@
 import { useState } from 'react'
 import { deleteRequest, updateRequest, createRequest} from '../api/basicRequest'
 
-export const useModal = (item, url, update) =>{
-    // UPDATE
-    const [data, setData]  =useState({name: item.name})
+export const useModal = (item, url) =>{
+    const { id, nameColumn1, nameColumn2, nameColumn3, nameColumn4, quantity, ...dataFilter } = item;
+    const [data, setData]  =useState({...dataFilter})
+
 
     const handleInput = (e) =>{
         setData({...data, [e.target.name]: e.target.value})
     }
 
-    function  handleSubmit() {
-        update ?
-        updateRequest(url + item.id + '/', {name: data.name})
-        :
-        createRequest(url, {name: data.name})
-    }
+    function  handleUpdate() { updateRequest(url + item.id + '/', data) }
 
-    // DELETE
+    function  handleCreate() { createRequest(url, data) }
+
     function  handleDelete() {
         deleteRequest(url + item.id + '/' )
         window.location.reload()
     }
     
-    return {handleDelete, data, handleInput, handleSubmit}
+    return {data, handleInput, handleCreate, handleUpdate, handleDelete}
 }
