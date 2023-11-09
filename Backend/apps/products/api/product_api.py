@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework import status, viewsets
 from rest_framework.response import Response
 from rest_framework.decorators import action
+from rest_framework.parsers import MultiPartParser, FormParser
 
 from apps.products.models import Product
 
@@ -11,6 +12,7 @@ from apps.products.api.serializers.product_serializers import ProductSerializer
 class ProductViewSet(viewsets.GenericViewSet):
     model = Product
     serializer_class = ProductSerializer
+    parser_classes = (MultiPartParser, FormParser)
 
     '''
     --------------GET METHODS-------------

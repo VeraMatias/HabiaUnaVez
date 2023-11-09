@@ -18,14 +18,14 @@ class ProductSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError('Debe ingresar un codigo de 6 digitos')
         return data
         
-    def to_representation(self, instance):
-        return {
-            'code': instance.code,
-            'quantity': instance.quantity,
-            'cost': instance.cost,
-            'price': instance.price,
-            'description': instance.description,
-            'category_product': instance.category_product.name if instance.category_product is not None else '',
-            'image': instance.image.url if instance.image != '' else "",
-            'supplier': instance.supplier.name if instance.supplier is not None else ''
-        }
+    # def to_representation(self, instance):
+    #     return {
+    #         'code': instance.code,
+    #         'quantity': instance.quantity,
+    #         'cost': instance.cost,
+    #         'price': instance.price,
+    #         'description': instance.description,
+    #         'category_product': instance.category_product.name if instance.category_product is not None else '',
+    #         'image': instance.image.url if instance.image != '' else "",
+    #         'supplier': instance.supplier.name if instance.supplier is not None else ''
+    #     }

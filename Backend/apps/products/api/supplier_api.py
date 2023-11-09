@@ -36,6 +36,7 @@ class SupplierViewSet(viewsets.GenericViewSet):
         if supplier_serializer.is_valid():
             supplier_serializer.save()
             return Response({'message': 'Proovedor cargado correctamente'}, status = status.HTTP_201_CREATED)
+        print(supplier_serializer.errors)
         return Response({'message': "Hay errores en el proveedor", 'errors': supplier_serializer.errors}, status = status.HTTP_400_BAD_REQUEST)
     
     def retrieve(self, request, pk = None):
