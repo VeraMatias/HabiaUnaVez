@@ -17,3 +17,11 @@ export const updateRequest = (url, data) => {
 export const createRequest = (url, data) => {
     return axios.post(baseURL + url, data)
 }
+
+export const createWithFileRequest = (url, data) => {
+    return axios.post(baseURL + url, data, {
+        headers: {
+            "Content-Type": "multipart/form-data"
+        }
+    })
+}

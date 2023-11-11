@@ -6,7 +6,7 @@ const ItemMenu = ({item}) =>{
     const {showItems, toggleShowItems} = useSideBar()
     
     return(
-    <li key = {item.id} className = {showItems[item.id] ? 'show-menu': ''}>
+    <li className = {showItems[item.id] ? 'show-menu': ''}>
         <div className="icon-link" onClick={() => toggleShowItems(item.id)}>
             <a href='#'>
                 <i className={item.icon}></i>
@@ -18,7 +18,7 @@ const ItemMenu = ({item}) =>{
             <li ><Link className='submenu-link-name'>{item.name}</Link></li>
             {
                 item.sub_menus.map(submenu =>(
-                    <li key = {item.name + submenu} ><Link>{submenu}</Link></li>
+                    <li key = {item.name + submenu.name} ><Link to={submenu.url}>{submenu.name}</Link></li>
                 ))
             }
         </ul>

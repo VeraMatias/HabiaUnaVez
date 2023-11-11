@@ -1,0 +1,53 @@
+@import url('../../styles/styles_base.css');
+
+.product-card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr-main);
+    border-radius: 1rem;
+    max-width: 16rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-top-right-radius: 3rem;
+    border-top-left-radius: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 0 1rem;
+}
+
+.info-code{
+    color: var(--clr-main);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.info-description{
+    font-size: 15px;
+    text-align: center;
+}
+
+.cost-price {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.info-cost, .info-price{
+    text-align: center;
+    font-weight: 600;
+}
+
+.product-img{
+    height: 15rem;
+    width: 15rem;
+    max-width: 100%;
+    margin-top: .5rem;
+    border-radius: 1rem;
+}
