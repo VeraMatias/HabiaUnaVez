@@ -1,4 +1,4 @@
-@import url('../../styles/styles_base.css');
+@import url('../../../styles/styles_base.css');
 
 .product-card{
     display: flex;

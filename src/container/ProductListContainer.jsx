@@ -3,10 +3,10 @@ import './ProductListContainer.css'
 import { useEffect} from 'react'
 import { useProductList } from '../hooks/useProductList';
 import ProductCardContainer from './ProductCardContainer';
+import DropdownList from '../components/General/DropdownList/DropdowList';
 
-const ProductListContainer = ({}) => {
-
-    const {products, loadProducts} = useProductList()
+const ProductListContainer = () => {
+    const {productsToShow, loadProducts, categories, filterCategory, suppliers, filterSupplier } = useProductList()
 
     useEffect(() =>{loadProducts();},[])
 
@@ -15,10 +15,11 @@ const ProductListContainer = ({}) => {
             <div className="product-list-header">
                 <h2 className='header-title'>PRODUCTOS</h2>
                 <div className="header-buttons">
-                    {/* <ButtonNew onClick ={toggleModalCreate}/> */}
+                    <DropdownList items={categories} title={'Categorías'} handleClick={filterCategory}/>
+                    <DropdownList items={suppliers} title={'Proveedores'} handleClick={filterSupplier}/>
                 </div>
             </div>
-            <ProductCardContainer products={products} />
+            <ProductCardContainer products={productsToShow} />
         </div>
         )
 }

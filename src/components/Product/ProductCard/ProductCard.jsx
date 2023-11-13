@@ -1,5 +1,5 @@
 import './ProductCard.css'
-import  noImage  from '../../assets/producto-sin-imagen.png'
+import  noImage  from '../../../assets/producto-sin-imagen.png'
 
 const ProductCard = ({product}) => {
     const baseURL = process.env.REACT_APP_BASE_URL

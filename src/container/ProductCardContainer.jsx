@@ -1,5 +1,5 @@
 import './ProductCardContainer.css'
-import ProductCard from '../components/ProductCard/ProductCard'
+import ProductCard from '../components/Product/ProductCard/ProductCard'
 
 const ProductCardContainer = ({products}) => {
     return(
