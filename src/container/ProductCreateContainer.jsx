@@ -2,8 +2,6 @@
 
 import { useModal } from "../hooks/useModal"
 
-
-
 const ProductCreateContainer = ({}) => {
 
     const {handleInput, handleCreateWithFile} = useModal('', '/products/product/')
@@ -25,7 +23,7 @@ const ProductCreateContainer = ({}) => {
                 <input type='text' name='category_product' onChange={handleInput} maxLength={'1'} className='input-name'></input>
                 <label>Proveedor</label>
                 <input type='text' name='supplier' onChange={handleInput} maxLength={'1'} className='input-name'></input>
-                <label>Imaageen</label>
+                <label>Imagen</label>
                 <input type='file' accept="image/*" name='image' onChange={handleInput} maxLength={'1'} className='input-name'></input>
                 <button className=" btn-save save" type='submit' form='form-submit'>Guardar</button>
             </form>

@@ -1,6 +1,7 @@
 import './UpdateSupplier.css'
 
 import { useModal } from '../../../hooks/useModal'
+import Input from '../../General/Input/Input'
 
 const UpdateSupplier = ({item, url}) => {
 
@@ -10,10 +11,8 @@ const UpdateSupplier = ({item, url}) => {
         <div className="modal-content">
             <p>Ingrese los datos a continuación:</p>
             <form onSubmit={handleUpdate} id='form-submit'> 
-                <label>Nombre</label>
-                <input type='text' name='name' onChange={handleInput} maxLength={'50'} className='input-name' value={data.name}></input>
-                <label>Pagina WEB</label>
-                <input type='url' name='url' onChange={handleInput} maxLength={'50'} className='input-name' value={data.url}></input>
+                <Input label={'Nombre'} type={'text'} name={'name'} handleInput={handleInput} maxLength={'50'} value={data.name}/>
+                <Input label={'Pagina WEB'} type={'url'} name={'url'} handleInput={handleInput} maxLength={'50'} value={data.url}/>
                 <label>Talla</label>
                 <div className="input-select">
                     <select name="armhole" onChange={handleInput} id="armhole" form="form-submit" value={data.armhole}>

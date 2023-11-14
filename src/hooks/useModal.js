@@ -39,10 +39,5 @@ export const useModal = (item, url) =>{
         window.location.reload()
     }
     
-    // const formData = new formData()
-    // const handleInput2 = (e) =>{
-    //     formData.append('image', e.target.files[0])
-    //     formData
-    // }
     return {data, handleInput, handleCreate, handleCreateWithFile, handleUpdate, handleDelete}
 }
