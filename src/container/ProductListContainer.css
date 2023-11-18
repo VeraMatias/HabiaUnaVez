@@ -19,6 +19,8 @@
 
 .header-buttons{
     display: flex;
-    gap: 2rem;
-    margin-left: 150px;
+    width: 100%;
+    padding-right: 50px;
+    gap: 3rem;
+    margin-left: 100px;
 }

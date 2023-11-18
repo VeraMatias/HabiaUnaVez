@@ -31,4 +31,6 @@ export const useProductList = () =>{
         }
     }
 
-    return { productsToShow, loadProducts, categories, filterCategory, suppliers, filterSupplier}}
+    const filterProduct = (e) => { setProductsToShow(products.filter(product => String(product.code).startsWith(e.target.value)))}
+
+    return { productsToShow, loadProducts, categories, filterCategory, suppliers, filterSupplier, filterProduct}}

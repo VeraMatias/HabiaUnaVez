@@ -12,7 +12,6 @@ export const useModal = (item, url) =>{
         }else{
         setData({...data, [e.target.name]: e.target.value})
         }
-        console.log(data)
     }
 
     function createFormData(){
@@ -29,6 +28,7 @@ export const useModal = (item, url) =>{
     function  handleUpdate() { updateRequest(url + item.id + '/', data) }
 
     function  handleCreate() { createRequest(url, data)  }
+    
     function  handleCreateWithFile() { 
         createFormData()
         createWithFileRequest(url, form_data) 
