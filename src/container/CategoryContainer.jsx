@@ -22,9 +22,7 @@ const CategoryContainer = () =>{
         <div className="container-category">
             <div className="category-header">
                 <h2 className='header-title'>CATEGORIAS</h2>
-                <div className="header-buttons">
-                    <ButtonNew onClick ={toggleModalCreate}/>
-                </div>
+                <ButtonNew onClick ={toggleModalCreate}/>
             </div>
             {category.map( category =>(<CardItem key={category.id} item={category} url={'/products/category_product/'} title={'Categoría'} modalContent={<GenericUpdate item={category} url={'/products/category_product/'}/>}/>))}
         </div>

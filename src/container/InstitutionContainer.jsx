@@ -21,9 +21,7 @@ const InstitutionContainter = () =>{
         <div className="container-institutions">
             <div className="institution-header">
                 <h2 className='header-title'>INSTITUCIONES</h2>
-                <div className="header-buttons">
-                    <ButtonNew onClick ={toggleModalCreate}/>
-                </div>
+                <ButtonNew onClick ={toggleModalCreate}/>
             </div>
             {institution.map( institution =>(<CardItem key={institution.id} item={institution} url={'/bags/institution/'} title={'Institución'} modalContent={<GenericUpdate item={institution} url={'/bags/institution/'}/>}/>))}
         </div>

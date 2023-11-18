@@ -22,9 +22,7 @@ const SupplierContainer = () =>{
         <div className="container-category">
             <div className="category-header">
                 <h2 className='header-title'>PROVEEDORES</h2>
-                <div className="header-buttons">
-                    <ButtonNew onClick ={toggleModalCreate}/>
-                </div>
+                <ButtonNew onClick ={toggleModalCreate}/>
             </div>
 
             {supplier.map( supplier =>(<CardItem key={supplier.id} item={supplier} url={'/products/supplier/'} title={'Proveedor'} modalContent={<UpdateSupplier item={supplier} url={'/products/supplier/'}/>}/>))}
