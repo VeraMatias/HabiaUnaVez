@@ -44,6 +44,17 @@
     border-bottom-right-radius: .5rem;
     padding-right: .25rem;
     padding-left: .25rem;
+    max-height: 13.1em;
+    overflow-y: scroll;
+}
+
+.submenu-dropdown::-webkit-scrollbar {
+    width: 2px; /* Ancho de la barra de desplazamiento */
+}
+
+.submenu-dropdown::-webkit-scrollbar-thumb {
+    background-color: var(--clr-main-dark);
+    border-radius: 3px; 
 }
 
 .submenu-item{
