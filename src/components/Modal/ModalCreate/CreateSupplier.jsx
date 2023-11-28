@@ -2,10 +2,11 @@ import './CreateSupplier.css'
 
 import { useModal } from '../../../hooks/useModal'
 import Input from '../../General/Input/Input'
+import InputSelect from '../../General/InputSelect/InputSelect'
 
 const CreateSupplier = ({item, url}) => {
 
-    const {handleInput, handleCreate} = useModal(item, url)
+    const {handleInput, handleCreate, dataOptionSupplier} = useModal(item, url)
 
     return(
         <div className="modal-content">
@@ -13,14 +14,7 @@ const CreateSupplier = ({item, url}) => {
             <form onSubmit={handleCreate} id='form-submit'> 
                 <Input label={'Nombre'} type={'text'} name={'name'} handleInput={handleInput} maxLength={'50'} />
                 <Input label={'Pagina WEB'} type={'url'} name={'url'} handleInput={handleInput} maxLength={'50'}/>
-                <label>Talla</label>
-                <div className="input-select">
-                    <select name="armhole" onChange={handleInput} id="armhole" form="form-submit">
-                        <option value="Chica">Chica</option>
-                        <option value="Normal">Normal</option>
-                        <option value="Grande">Grande</option>
-                    </select>
-                </div>
+                <InputSelect label={'Talla'} name={'armhole'} onChange={handleInput} data={dataOptionSupplier}/>
             </form>
         </div> 
     )

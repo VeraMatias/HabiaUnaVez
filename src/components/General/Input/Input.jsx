@@ -1,12 +1,12 @@
 import './Input.css'
 
 
-const Input = ({label, type, name, handleInput, maxLength, value}) => {
+const Input = ({label, type, name, handleInput, handleOnBlur, maxLength, value}) => {
 
     return(
         <>
-        <label for ={name}>{label}</label>
-        <input type= {type} name={name} id={name} onChange={handleInput} maxLength={maxLength} className='input-form' value={value}></input>
+        <label htmlFor ={name}>{label}</label>
+        <input type= {type} name={name} id={name} onChange={handleInput} onBlur={handleOnBlur} maxLength={maxLength} value={value} className='input-form'></input>
         </>
 
     )

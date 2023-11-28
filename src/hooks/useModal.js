@@ -4,9 +4,11 @@ import { deleteRequest, updateRequest, createRequest, createWithFileRequest} fro
 export const useModal = (item, url) =>{
     const { id, nameColumn1, nameColumn2, nameColumn3, nameColumn4, quantity, ...dataFilter } = item;
     const [data, setData]  =useState({...dataFilter})
+    const dataOptionSupplier = [{value: 'Chica', name: 'Chica' }, {value: 'Normal', name: 'Normal' }, {value: 'Grande', name: 'Grande' }]
     let form_data = new FormData()
 
     const handleInput = (e) =>{
+        console.log(data)
         if(e.target.name === 'image'){
             setData({...data, [e.target.name]: e.target.files[0]})
         }else{
@@ -39,5 +41,5 @@ export const useModal = (item, url) =>{
         window.location.reload()
     }
     
-    return {data, handleInput, handleCreate, handleCreateWithFile, handleUpdate, handleDelete}
+    return {data, dataOptionSupplier, handleInput, handleCreate, handleCreateWithFile, handleUpdate, handleDelete}
 }

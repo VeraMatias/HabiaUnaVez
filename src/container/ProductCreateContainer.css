@@ -1,0 +1,115 @@
+@import url('../styles/styles_base.css');
+
+.container-product-create{
+    font-family: 'Poppins', sans-serif;
+}
+
+.product-create-header{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.header-title{
+    font-size: 20px;
+}
+
+.msg-error-code{
+    font-style: italic;
+    color: red;
+    margin-bottom: .5rem;
+}
+
+.product-create{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-create-new{
+    width: 45%
+}
+
+.container-input-image{
+    display: flex;
+    gap: 1rem;
+}
+
+.input-image-selection{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 21rem;
+}
+
+.input-image{
+    border: 1px solid gainsboro;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.input-image::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background-color: var(--clr-main-dark);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: var(--clr-white);
+    cursor: pointer;
+    transition: opacity .2s ease-in-out;
+}
+
+.input-image::file-selector-button:hover {
+    opacity: 0.9;
+}
+
+.image-preview{
+    width: 15rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    height: 10rem;
+    border: 1px solid ;
+}
+
+.last-products{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table{
+    background-color: var(--clr-white);
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.table-products-head{
+    height: 40px;
+    background-color: var(--clr-main);
+}
+
+.table-products-head > th{
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+}
+
+.table-products tbody tr{
+    line-height: 40px;
+    text-align: center;
+    color: gray;
+}
+
+.table-products tbody tr:hover{
+    background-color: var(--clr-main-light);
+    color: black;
+}
+
+.body-column{
+    background-color: #f5f5f5;
+}

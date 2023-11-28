@@ -7,12 +7,13 @@ export const useProductList = () =>{
     const [categories, setCategories] = useState([])
     const [suppliers, setSuppliers] = useState([])
 
-    async function loadProducts(){
+    async function loadProducts(setNextCode = null){
         const res = await getRequest('/products/product/')
         setProducts(res.data.slice().reverse())
         setProductsToShow(res.data.slice().reverse())
         setCategories(['Todas', ...new Set(res.data.map(product => product.category_product))])
         setSuppliers(['Todos', ...new Set(res.data.map(product => product.supplier))])
+        if (setNextCode !== null){ setNextCode(parseInt(res.data.reverse().slice(0,1)[0].code + 1))}
     }
 
     const filterCategory = (category) => {
@@ -33,4 +34,4 @@ export const useProductList = () =>{
 
     const filterProduct = (e) => { setProductsToShow(products.filter(product => String(product.code).startsWith(e.target.value)))}
 
-    return { productsToShow, loadProducts, categories, filterCategory, suppliers, filterSupplier, filterProduct}}
+    return { productsToShow, products, loadProducts, categories, filterCategory, suppliers, filterSupplier, filterProduct}}

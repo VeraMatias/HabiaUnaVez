@@ -18,3 +18,9 @@
     outline: none;
     box-shadow: 0 0 5px var(--clr-main);
 }
+
+.input-form::-webkit-inner-spin-button,
+.input-form::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
