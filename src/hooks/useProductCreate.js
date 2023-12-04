@@ -44,11 +44,10 @@ export const useProductCreate = (url) =>{
         form_data.append('supplier', parseInt(data.supplier))
         if (data.image !== undefined)
         {
-            form_data.append('image', data.image, data.image.name)
+            form_data.append('image', data.image, `${data.code}.jpg`)
         }else{
             form_data.append('image', '')
         }
-        
     }
 
     function  handleCreateWithFile() { 

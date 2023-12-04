@@ -29,39 +29,6 @@
     width: 45%
 }
 
-.container-input-image{
-    display: flex;
-    gap: 1rem;
-}
-
-.input-image-selection{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 21rem;
-}
-
-.input-image{
-    border: 1px solid gainsboro;
-    border-radius: 1rem;
-    padding: 0.5rem;
-}
-
-.input-image::file-selector-button {
-    margin-right: 20px;
-    border: none;
-    background-color: var(--clr-main-dark);
-    padding: 10px 20px;
-    border-radius: 10px;
-    color: var(--clr-white);
-    cursor: pointer;
-    transition: opacity .2s ease-in-out;
-}
-
-.input-image::file-selector-button:hover {
-    opacity: 0.9;
-}
-
 .image-preview{
     width: 15rem;
     border-radius: 1rem;

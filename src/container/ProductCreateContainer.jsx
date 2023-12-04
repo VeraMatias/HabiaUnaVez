@@ -7,6 +7,7 @@ import { useCategoryContainer } from '../hooks/useCategoryContainer'
 import { useSupplierContainer } from '../hooks/useSupplierContainer'
 import { useProductList } from '../hooks/useProductList'
 import { useProductCreate } from '../hooks/useProductCreate'
+import InputImage from '../components/General/InputImage/InputImage'
 
 const ProductCreateContainer = () => {
 
@@ -43,12 +44,7 @@ const ProductCreateContainer = () => {
                         <InputSelect label={'Categoría'} name={'category'} onChange={handleInput} data={category} />
                         <InputSelect label={'Proveedor'} name={'supplier'} onChange={handleInput} data={supplier} />
 
-                        <div className="container-input-image">
-                            <div className='input-image-selection'>
-                                <label>Imagen</label>
-                                <input type='file' accept="image/*" name='image' onChange={(e) => {handleInput(e); setImagePreview(URL.createObjectURL(e.target.files[0]))}} maxLength={'1'} className='input-image'></input>
-                            </div>
-                        </div>
+                        <InputImage label={'Imagen'} onChange={(e) => {handleInput(e); setImagePreview(URL.createObjectURL(e.target.files[0]))}}/>
                         <div className="container-button-create">
                             <button className=" btn-create" type='submit' form='form-submit'>Guardar</button>
                         </div>
