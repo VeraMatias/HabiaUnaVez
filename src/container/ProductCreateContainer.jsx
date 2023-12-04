@@ -49,8 +49,9 @@ const ProductCreateContainer = () => {
                                 <input type='file' accept="image/*" name='image' onChange={(e) => {handleInput(e); setImagePreview(URL.createObjectURL(e.target.files[0]))}} maxLength={'1'} className='input-image'></input>
                             </div>
                         </div>
-                    
-                        <button className=" btn-save save" type='submit' form='form-submit'>Guardar</button>
+                        <div className="container-button-create">
+                            <button className=" btn-create" type='submit' form='form-submit'>Guardar</button>
+                        </div>
                     </form>
                 </div>
                 <div className="last-products">
@@ -83,10 +84,9 @@ const ProductCreateContainer = () => {
                     </div>
                     {imagePreview? 
                     <>
-                    <p>Previsualización</p>
-                    <img className="image-preview" src={imagePreview} alt='previsualización de imagen'/>
+                        <p>Previsualización</p>
+                        <img className="image-preview" src={imagePreview} alt='previsualización de imagen'/>
                     </>
-
                     : null}
                 </div>
             </div>
