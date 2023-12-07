@@ -25,6 +25,12 @@ const ProductCreateContainer = () => {
         loadProducts(setNextCode)
     },[])
 
+    const [selectedProduct, setSelectedProduct] = useState(null)
+
+    const handleRowClick = (selectedProductRow) =>  {
+        selectedProductRow.code === selectedProduct?.code ? setSelectedProduct(null) : setSelectedProduct(selectedProductRow)
+    }
+
     return(
         <div className="container-product-create">
             <div className="product-create-header">
@@ -63,7 +69,10 @@ const ProductCreateContainer = () => {
                         </thead>
                         <tbody>
                             { products.slice(0,12).map((product, index) =>(
-                                <tr key={product.code} className={index % 2 === 0 ? 'body-column': null}>
+                                <tr 
+                                key={product.code} 
+                                className={`${index % 2 === 0 ? 'body-column' : ''} ${product.code === selectedProduct?.code ? 'selected-row' : ''}`} 
+                                onClick={() => handleRowClick(product)}>
                                     <td>{product.code}</td>
                                     <td>{product.quantity}</td>
                                     <td>${product.cost}</td>
@@ -74,9 +83,8 @@ const ProductCreateContainer = () => {
                         </tbody>
                     </table>
                     <div className="buttons-table">
-                        <button className=" btn-save save" type='submit' form='form-submit'>Guardar</button>
-                        <button className=" btn-save save" type='submit' form='form-submit'>Guardar</button>
-                        <button className=" btn-save save" type='submit' form='form-submit'>Guardar</button>
+                        <button className=" btn-save save" type='submit' form='form-submit'>Editar</button>
+                        <button className=" btn-save save" type='submit' form='form-submit'>Re Imprimir</button>
                     </div>
                     {imagePreview? 
                     <>

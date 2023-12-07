@@ -72,10 +72,6 @@
     border: solid 2px #00cc33;
 }
 
-
-
-
-
 .last-products{
     width: 50%;
     display: flex;
@@ -118,4 +114,11 @@ table{
 
 .body-column{
     background-color: #f5f5f5;
+}
+
+tr.selected-row td{
+    background-color: var(--clr-main-light);
+    color: black;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
